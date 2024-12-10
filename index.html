@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark KrnlR</title>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        /* Background Styling */
+        body {
+            background: radial-gradient(circle, #1a1a4a, #0f0f2f, #1e1e2f); /* Adjusted gradient */
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar (Black Bar) */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        /* Dark Matter Button Effect */
+        .nav-buttons a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            position: relative;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons a:hover {
+            background: radial-gradient(circle, #ff0080, #8000ff, #3a3a3a);
+            box-shadow: 0 4px 10px rgba(255, 87, 51, 0.5);
+        }
+
+        /* Dark Matter Underline */
+        .nav-buttons a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #3a3a3a; /* Dark matter underline */
+            transition: width 0.3s;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .nav-buttons a:hover::after {
+            width: 100%;
+        }
+
+        /* Content Styling */
+        .content {
+            text-align: center;
+            margin-top: 80px;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px #ffffff, 0 0 30px #8000ff, 0 0 60px #ff0080;
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 15px #ffffff, 0 0 30px #8000ff, 0 0 60px #ff0080; }
+            100% { text-shadow: 0 0 25px #ff0080, 0 0 50px #8000ff, 0 0 100px #ffffff; }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Button Styling */
+        .button {
+            background: linear-gradient(135deg, #ff5733, #900C3F);
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 87, 51, 0.5);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 87, 51, 0.7);
+        }
+
+        /* Custom Cursor */
+        body {
+            cursor: none;
+        }
+
+        #cursor {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.5));
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="info.html">Info</a>
+        <a href="why-we-made-this.html">Why we made this?</a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>Dark KrnlR</h1>
+        <div class="buttons">
+            <a href="https://discord.gg/H8AxSpUR" class="button" target="_blank">Discord</a>
+            <a href="https://www.mediafire.com/file/557kcwda6hxtowm/KrnlR.zip/file" class="button" target="_blank">Download</a>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+
+    <!-- Cursor Script -->
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.pageX}px`;
+            cursor.style.top = `${e.pageY}px`;
+        });
+    </script>
+</body>
+</html>
