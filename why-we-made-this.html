@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why We Made This - Nefral</title>
+    <style>
+        body {
+            background: radial-gradient(circle, #1a1a4a, #0f0f2f, #1e1e2f); /* Adjusted gradient without black */
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #eb2c2c;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #f0755a;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Custom Cursor */
+        #cursor {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(255,255,255,0.8), rgba(0,0,0,0.5));
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Why We Made Nefral</h1>
+    <p>
+        We created this program to enhance the Roblox experience and make it more fun to interact with other players. It may cause bans, but that is part of using mods and cheats. We are not responsible for any consequences that happen from using this tool.
+    </p>
+    <a href="KrnlR.html" class="back">Back to Main</a>
+
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+
+    <!-- Cursor Script -->
+    <script>
+        const cursor = document.getElementById('cursor');
+        let cursorPosition = localStorage.getItem('cursorPosition');
+
+        if (cursorPosition) {
+            const position = cursorPosition.split(',');
+            cursor.style.left = `${position[0]}px`;
+            cursor.style.top = `${position[1]}px`;
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.pageX}px`;
+            cursor.style.top = `${e.pageY}px`;
+
+            localStorage.setItem('cursorPosition', `${e.pageX},${e.pageY}`);
+        });
+    </script>
+</body>
+</html>
